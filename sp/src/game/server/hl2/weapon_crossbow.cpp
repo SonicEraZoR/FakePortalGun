@@ -78,6 +78,7 @@ protected:
 	DECLARE_DATADESC();
 	DECLARE_SERVERCLASS();
 };
+
 LINK_ENTITY_TO_CLASS( crossbow_bolt, CCrossbowBolt );
 
 BEGIN_DATADESC( CCrossbowBolt )
@@ -446,6 +447,8 @@ public:
 	DECLARE_SERVERCLASS();
 	DECLARE_DATADESC();
 
+	DECLARE_ACTTABLE();
+
 private:
 	
 	void	StopEffects( void );
@@ -477,6 +480,20 @@ private:
 	bool				m_bInZoom;
 	bool				m_bMustReload;
 };
+
+acttable_t CWeaponCrossbow::m_acttable[] =
+{
+	{ ACT_HL2MP_IDLE, ACT_HL2MP_IDLE_CROSSBOW, false },
+	{ ACT_HL2MP_RUN, ACT_HL2MP_RUN_CROSSBOW, false },
+	{ ACT_HL2MP_IDLE_CROUCH, ACT_HL2MP_IDLE_CROUCH_CROSSBOW, false },
+	{ ACT_HL2MP_WALK_CROUCH, ACT_HL2MP_WALK_CROUCH_CROSSBOW, false },
+	{ ACT_HL2MP_GESTURE_RANGE_ATTACK, ACT_HL2MP_GESTURE_RANGE_ATTACK_CROSSBOW, false },
+	{ ACT_HL2MP_GESTURE_RELOAD, ACT_HL2MP_GESTURE_RELOAD_CROSSBOW, false },
+	{ ACT_HL2MP_JUMP, ACT_HL2MP_JUMP_CROSSBOW, false },
+	{ ACT_RANGE_ATTACK1, ACT_RANGE_ATTACK_SHOTGUN, false },
+};
+
+IMPLEMENT_ACTTABLE(CWeaponCrossbow);
 
 LINK_ENTITY_TO_CLASS( weapon_crossbow, CWeaponCrossbow );
 

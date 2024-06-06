@@ -17,6 +17,10 @@
 // memdbgon must be the last include file in a .cpp file!!!
 #include "tier0/memdbgon.h"
 
+#ifdef MAPBASE
+ConVar explosion_sparks("explosion_sparks", "0", FCVAR_NONE);
+#endif
+
 //-----------------------------------------------------------------------------
 // Purpose: Spark shower, created by the explosion entity.
 //-----------------------------------------------------------------------------
@@ -99,6 +103,8 @@ public:
 	{
 		// Default to invalid.
 		m_sFireballSprite = -1;
+
+		m_pWeapon = NULL;
 	};
 
 	void Precache( void );
@@ -111,6 +117,9 @@ public:
 
 	// Input handlers
 	void InputExplode( inputdata_t &inputdata );
+#ifdef MAPBASE
+	void InputSetIgnoredEntity( inputdata_t &inputdata );
+#endif
 
 	DECLARE_DATADESC();
 
@@ -127,6 +136,7 @@ public:
 	int m_iClassIgnore;
 	EHANDLE m_hEntityIgnore;
 
+	CBaseEntity *m_pWeapon;
 };
 
 LINK_ENTITY_TO_CLASS( env_explosion, CEnvExplosion );
@@ -150,6 +160,9 @@ BEGIN_DATADESC( CEnvExplosion )
 
 	// Inputs
 	DEFINE_INPUTFUNC(FIELD_VOID, "Explode", InputExplode),
+#ifdef MAPBASE
+	DEFINE_INPUTFUNC(FIELD_EHANDLE, "SetIgnoredEntity", InputSetIgnoredEntity),
+#endif
 
 END_DATADESC()
 
@@ -345,6 +358,8 @@ void CEnvExplosion::InputExplode( inputdata_t &inputdata )
 			info.SetDamageForce( Vector( m_flDamageForce, 0, 0 ) );
 		}
 
+		info.SetWeapon(m_pWeapon);
+
 		RadiusDamage( info, GetAbsOrigin(), iRadius, m_iClassIgnore, m_hEntityIgnore.Get() );
 	}
 
@@ -352,7 +367,11 @@ void CEnvExplosion::InputExplode( inputdata_t &inputdata )
 	SetNextThink( gpGlobals->curtime + 0.3 );
 
 	// Only do these effects if we're not submerged
+#ifdef MAPBASE
+	if ( explosion_sparks.GetBool() && !(UTIL_PointContents( GetAbsOrigin() ) & CONTENTS_WATER) )
+#else
 	if ( UTIL_PointContents( GetAbsOrigin() ) & CONTENTS_WATER )
+#endif
 	{
 		// draw sparks
 		if ( !( m_spawnflags & SF_ENVEXPLOSION_NOSPARKS ) )
@@ -368,6 +387,16 @@ void CEnvExplosion::InputExplode( inputdata_t &inputdata )
 		}
 	}
 }
+
+#ifdef MAPBASE
+//-----------------------------------------------------------------------------
+// Purpose: Input handler for setting the ignored entity.
+//-----------------------------------------------------------------------------
+void CEnvExplosion::InputSetIgnoredEntity( inputdata_t &inputdata )
+{
+	m_hEntityIgnore = inputdata.value.Entity();
+}
+#endif
 
 
 void CEnvExplosion::Smoke( void )
@@ -388,7 +417,7 @@ void ExplosionCreate( const Vector &center, const QAngle &angles,
 
 	CEnvExplosion *pExplosion = (CEnvExplosion*)CBaseEntity::Create( "env_explosion", center, angles, pOwner );
 	Q_snprintf( buf,sizeof(buf), "%3d", magnitude );
-	char *szKeyName = "iMagnitude";
+	const char *szKeyName = "iMagnitude";
 	char *szValue = buf;
 	pExplosion->KeyValue( szKeyName, szValue );
 
@@ -469,6 +498,49 @@ void ExplosionCreate( const Vector &center, const QAngle &angles,
 	}
 
 	ExplosionCreate( center, angles, pOwner, magnitude, radius, nFlags, flExplosionForce, NULL, iCustomDamageType, ignoredEntity, ignoredClass );
+}
+
+// Can pass a weapon into this one
+void ExplosionCreate(const Vector &center, const QAngle &angles, CBaseEntity *pWeapon,
+	CBaseEntity *pOwner, int magnitude, int radius, int nSpawnFlags,
+	float flExplosionForce, CBaseEntity *pInflictor, int iCustomDamageType, const EHANDLE *ignoredEntity, Class_T ignoredClass)
+{
+	char			buf[128];
+
+	CEnvExplosion *pExplosion = (CEnvExplosion*)CBaseEntity::Create("env_explosion", center, angles, pOwner);
+	Q_snprintf(buf, sizeof(buf), "%3d", magnitude);
+	const char *szKeyName = "iMagnitude";
+	char *szValue = buf;
+	pExplosion->KeyValue(szKeyName, szValue);
+
+	pExplosion->AddSpawnFlags(nSpawnFlags);
+
+	if (radius)
+	{
+		Q_snprintf(buf, sizeof(buf), "%d", radius);
+		pExplosion->KeyValue("iRadiusOverride", buf);
+	}
+
+	if (flExplosionForce != 0.0f)
+	{
+		Q_snprintf(buf, sizeof(buf), "%.3f", flExplosionForce);
+		pExplosion->KeyValue("DamageForce", buf);
+	}
+
+	variant_t emptyVariant;
+	pExplosion->m_nRenderMode = kRenderTransAdd;
+	pExplosion->SetOwnerEntity(pOwner);
+	pExplosion->Spawn();
+	pExplosion->m_hInflictor = pInflictor;
+	pExplosion->SetCustomDamageType(iCustomDamageType);
+	pExplosion->m_pWeapon = pWeapon;
+	if (ignoredEntity)
+	{
+		pExplosion->m_hEntityIgnore = *ignoredEntity;
+	}
+	pExplosion->m_iClassIgnore = ignoredClass;
+
+	pExplosion->AcceptInput("Explode", NULL, NULL, emptyVariant, 0);
 }
 
 //-----------------------------------------------------------------------------
