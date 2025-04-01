@@ -5884,10 +5884,6 @@ void CBasePlayer::ImpulseCommands( )
 		}
 		break;
 
-	case 102:
-		GiveNamedItem("weapon_fakeportalgun");
-		break;
-
 	case 200:
 		if ( sv_cheats->GetBool() )
 		{
@@ -6164,7 +6160,6 @@ void CBasePlayer::CheatImpulseCommands( int iImpulse )
 		GiveNamedItem( "weapon_physcannon" );
 		GiveNamedItem( "weapon_bugbait" );
 		GiveNamedItem( "weapon_rpg" );
-		GiveNamedItem( "weapon_fakeportalgun" );
 		GiveNamedItem( "weapon_357" );
 		GiveNamedItem( "weapon_crossbow" );
 #ifdef HL2_EPISODIC
