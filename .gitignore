@@ -54,3 +54,36 @@ config.cfg
 # shader files
 *.tmp
 
+*.exe
+*.pdb
+*.dll
+*.bsp
+*.ain
+*.vmt
+*.vtf
+*.raw
+*.vtx
+*.mdl
+*.vvd
+*.phy
+*.cache
+*.pcf
+*.sav
+*.wav
+*.mp3
+*.hl1
+*.hl2
+*.hl3
+*.tga
+*.filters
+*.vpc_crc
+sp/game/*/voice_ban.dt
+sp/game/*/cfg/server_blacklist.txt
+sp/game/*/GameState.txt
+sp/game/*/stats.txt
+sp/game/*/ep1_gamestats.dat
+sp/game/*/ep1_gamestats.dat
+sp/src/utils/sapi51/*
+*.lib
+sp/src/utils/qc_eyes/Debug/QC_Eyes.res
+sp/src/utils/qc_eyes/Release/QC_Eyes.res
