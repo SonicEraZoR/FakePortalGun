@@ -40,6 +40,7 @@ ConVar sk_autoaim_mode( "sk_autoaim_mode", "1", FCVAR_ARCHIVE | FCVAR_REPLICATED
 #ifndef CLIENT_DLL
 ConVar log_verbose_enable( "log_verbose_enable", "0", FCVAR_GAMEDLL, "Set to 1 to enable verbose server log on the server." );
 ConVar log_verbose_interval( "log_verbose_interval", "3.0", FCVAR_GAMEDLL, "Determines the interval (in seconds) for the verbose server log." );
+ConVar sv_rocket_jump_damage_decrease("sv_rocket_jump_damage_decrease", "0.75", FCVAR_GAMEDLL, "Percent by which rocket jump damage is decreased for the player.");
 #endif // CLIENT_DLL
 
 static CViewVectors g_DefaultViewVectors(
@@ -518,6 +519,11 @@ void CGameRules::RadiusDamage( const CTakeDamageInfo &info, const Vector &vecSrc
 			adjustedInfo.SetDamagePosition( vecSrc );
 		}
 
+		if (info.GetAttacker() && info.GetAttacker()->IsPlayer() && pEntity->IsPlayer() && info.GetWeapon() && FClassnameIs(info.GetWeapon(), "weapon_fakeportalgun"))
+		{
+			adjustedInfo.SetDamage(flAdjustedDamage - (flAdjustedDamage * sv_rocket_jump_damage_decrease.GetFloat()));
+		}
+
 		if ( tr.fraction != 1.0 && pEntity == tr.m_pEnt )
 		{
 			ClearMultiDamage( );
@@ -606,6 +612,30 @@ void CGameRules::EndGameFrame( void )
 		ApplyMultiDamage();
 	}
 }
+
+#ifdef MAPBASE
+void CGameRules::OnSkillLevelChanged( int iNewLevel )
+{
+	variant_t varNewLevel;
+	varNewLevel.SetInt(iNewLevel);
+
+	// Iterate through all logic_skill entities and fire them
+	CBaseEntity *pEntity = gEntList.FindEntityByClassname(NULL, "logic_skill");
+	while (pEntity)
+	{
+		pEntity->AcceptInput("SkillLevelChanged", UTIL_GetLocalPlayer(), NULL, varNewLevel, 0);
+		pEntity = gEntList.FindEntityByClassname(pEntity, "logic_skill");
+	}
+
+	// Fire game event for difficulty level changed
+	IGameEvent *event = gameeventmanager->CreateEvent("skill_changed");
+	if (event)
+	{
+		event->SetInt("skill_level", iNewLevel);
+		gameeventmanager->FireEvent(event);
+	}
+}
+#endif
 
 //-----------------------------------------------------------------------------
 // trace line rules
