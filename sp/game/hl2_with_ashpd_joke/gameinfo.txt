@@ -1,6 +1,6 @@
 "GameInfo"
 {
-	game 		"Half-Life 2 with ASHPD"
+	game 		"Half-Life 2 with ASHPD (April Fools')"
 	title 		"Half-Life 2 with"
 	title2		"Aperture Science Handheld Portal Device"
 
