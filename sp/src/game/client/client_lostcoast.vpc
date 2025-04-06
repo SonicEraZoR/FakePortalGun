@@ -1,12 +1,12 @@
 //-----------------------------------------------------------------------------
-//	CLIENT_HL2.VPC
+//	CLIENT_LOSTCOAST.VPC
 //
 //	Project Script
 //-----------------------------------------------------------------------------
 
 $Macro SRCDIR		"..\.."
-$Macro GAMENAME 	"hl2" [!$SOURCESDK]
-$Macro GAMENAME 	"hl2_with_ashpd_joke" [$SOURCESDK]
+$Macro GAMENAME 	"lostcoast" [!$SOURCESDK]
+$Macro GAMENAME 	"hl2lostcoast_with_ashpd_joke" [$SOURCESDK]
 
 $Include "$SRCDIR\game\client\client_base.vpc"
 $Include "$SRCDIR\game\protobuf_include.vpc"
@@ -16,11 +16,11 @@ $Configuration
 	$Compiler
 	{
 		$AdditionalIncludeDirectories	".\hl2;.\hl2\elements;$SRCDIR\game\shared\hl2;$BASE"
-		$PreprocessorDefinitions		"$BASE;HL2_CLIENT_DLL"
+		$PreprocessorDefinitions		"$BASE;HL2_CLIENT_DLL;HL2_LOSTCOAST"
 	}
 }
 
-$Project "Client (HL2)"
+$Project "Client (LostCoast)"
 {
 	$Folder	"Source Files"
 	{

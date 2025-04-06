@@ -1,12 +1,12 @@
 //-----------------------------------------------------------------------------
-//	SERVER_HL2.VPC
+//	SERVER_LOSTCOAST.VPC
 //
 //	Project Script
 //-----------------------------------------------------------------------------
 
 $Macro SRCDIR		"..\.."
-$Macro GAMENAME 	"hl2" [!$SOURCESDK]
-$Macro GAMENAME 	"hl2_with_ashpd_joke" [$SOURCESDK]
+$Macro GAMENAME 	"lostcoast" [!$SOURCESDK]
+$Macro GAMENAME 	"hl2lostcoast_with_ashpd_joke" [$SOURCESDK]
 
 $Include "$SRCDIR\game\server\server_base.vpc"
 
@@ -14,12 +14,12 @@ $Configuration
 {
 	$Compiler
 	{
-		$AdditionalIncludeDirectories	"$BASE;$SRCDIR\game\shared\hl2;.\hl2"
-		$PreprocessorDefinitions		"$BASE;HL2_DLL;USES_SAVERESTORE"
+		$AdditionalIncludeDirectories	"$BASE;$SRCDIR\game\shared\hl2,.\hl2,.\episodic"
+		$PreprocessorDefinitions		"$BASE;HL2_DLL;HL2_LOSTCOAST"
 	}
 }
 
-$Project "Server (HL2)"
+$Project "Server (LostCoast)"
 {
 	$Folder	"Source Files"
 	{
@@ -249,8 +249,7 @@ $Project "Server (HL2)"
 			$File	"hl2\weapon_smg1.cpp"
 			$File	"hl2\weapon_stunstick.cpp"
 			$File	"hl2\weapon_stunstick.h"
-			$File	"hl2\weapon_fakeportalgun.cpp"
-			$File	"hl2\weapon_fakeportalgun.h"
+			$File	"episodic\weapon_oldmanharpoon.cpp"
 
 			$Folder	"Unused"
 			{
