@@ -58,7 +58,6 @@ config.cfg
 *.pdb
 *.dll
 *.bsp
-*.ain
 *.vmt
 *.vtf
 *.raw
