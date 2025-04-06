@@ -48,4 +48,7 @@ protoc binary
 ccache binary
 
 gtest_output_test_golden_lin.txt binary
-mod_*_english.txt binary
+*_english.txt binary
+*_russian.txt binary
+*_with_ashpd_joke_english.txt binary
+*_with_ashpd_joke_russian.txt binary
