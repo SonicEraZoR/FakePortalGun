@@ -24,6 +24,7 @@ Scheme
 	BaseSettings
 	{
 		"FgColor"			"255 220 0 100"
+		"FgColor_vrmode"	"255 220 0 200"
 		"BgColor"			"0 0 0 76"
 
 		"Panel.FgColor"			"255 220 0 100"
@@ -50,13 +51,13 @@ Scheme
 		"Caution"			"255 48 0 255"
 
 		// Top-left corner of the "Half-Life 2" on the main screen
-		"Main.Title1.X"				"76"
+		"Main.Title1.X"				"53"
 		"Main.Title1.Y"				"145"
 		"Main.Title1.Y_hidef"		"130"
 		"Main.Title1.Color"	"255 255 255 255"
 
 		// Top-left corner of secondary title e.g. "DEMO" on the main screen
-		"Main.Title2.X"				"76"
+		"Main.Title2.X"				"53"
 		"Main.Title2.Y"				"190"
 		"Main.Title2.Y_hidef"		"174"
 		"Main.Title2.Color"	"255 255 255 200"
@@ -307,6 +308,46 @@ Scheme
 			"1"
 			{
 				"name"		"HalfLife2"
+				"tall"		"32"
+				"weight"	"0"
+				"antialias" "1"
+				"additive"	"1"
+				"custom"	"1"
+			}
+		}
+		WeaponIconsRB
+		{
+			"1"
+			{
+				"name"		"RealBeta's Weapon Icons"
+				"tall"		"64"
+				"tall_hidef"	"58"
+				"weight"	"0"
+				"antialias" "1"
+				"additive"	"1"
+				"custom"	"1"
+			}
+		}
+		WeaponIconsSelectedRB
+		{
+			"1"
+			{
+				"name"		"RealBeta's Weapon Icons"
+				"tall"		"64"
+				"tall_hidef"	"58"
+				"weight"	"0"
+				"antialias" "1"
+				"blur"		"5"
+				"scanlines"	"2"
+				"additive"	"1"
+				"custom"	"1"
+			}
+		}
+		WeaponIconsSmallRB
+		{
+			"1"
+			{
+				"name"		"RealBeta's Weapon Icons"
 				"tall"		"32"
 				"weight"	"0"
 				"antialias" "1"
@@ -590,7 +631,7 @@ Scheme
 				"name"		"Verdana" [$OSX]
 				"tall"		"16" [!$OSX]
 				"tall"		"14" [$OSX]
-				"tall_hidef"	"24"
+ 				"tall_hidef"	"24"
 				"weight"	"900"
 				"range"		"0x0000 0x017F" //	Basic Latin, Latin-1 Supplement, Latin Extended-A
 			}
@@ -631,13 +672,12 @@ Scheme
 		{
 			"1"
 			{
-				"name"  "HL2EP2"
-				"tall"			"34"
-				"tall_hidef"	"48"
+				"name"  "Trebuchet MS"
+				"tall"			"51"
 				"weight" "0"
 				"additive" "0"
 				"antialias" "1"
-				"custom"	"1" [$OSX]
+				"blur" "2"
 			}
 		}
 		CreditsLogo
@@ -793,7 +833,7 @@ Scheme
 	{
 		"1"		"resource/HALFLIFE2.ttf"
 		"2"		"resource/HL2crosshairs.ttf"
-		"3"	"resource/HL2EP2.ttf"		
+		"3"		"resource/RealBeta's Weapon Icons.ttf"
 	}
 
 }
