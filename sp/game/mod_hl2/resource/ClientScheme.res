@@ -51,15 +51,15 @@ Scheme
 		"Caution"			"255 48 0 255"
 
 		// Top-left corner of the "Half-Life 2" on the main screen
-		"Main.Title1.X"			"53"
-		"Main.Title1.Y"			"190"
-		"Main.Title1.Y_hidef"	"184"
+		"Main.Title1.X"				"53"
+		"Main.Title1.Y"				"145"
+		"Main.Title1.Y_hidef"		"130"
 		"Main.Title1.Color"	"255 255 255 255"
 
 		// Top-left corner of secondary title e.g. "DEMO" on the main screen
-		"Main.Title2.X"				"291"
-		"Main.Title2.Y"				"207"
-		"Main.Title2.Y_hidef"		"242"
+		"Main.Title2.X"				"53"
+		"Main.Title2.Y"				"190"
+		"Main.Title2.Y_hidef"		"174"
 		"Main.Title2.Color"	"255 255 255 200"
 
 		// Top-left corner of the menu on the main screen
@@ -308,6 +308,46 @@ Scheme
 			"1"
 			{
 				"name"		"HalfLife2"
+				"tall"		"32"
+				"weight"	"0"
+				"antialias" "1"
+				"additive"	"1"
+				"custom"	"1"
+			}
+		}
+		WeaponIconsRB
+		{
+			"1"
+			{
+				"name"		"RealBeta's Weapon Icons"
+				"tall"		"64"
+				"tall_hidef"	"58"
+				"weight"	"0"
+				"antialias" "1"
+				"additive"	"1"
+				"custom"	"1"
+			}
+		}
+		WeaponIconsSelectedRB
+		{
+			"1"
+			{
+				"name"		"RealBeta's Weapon Icons"
+				"tall"		"64"
+				"tall_hidef"	"58"
+				"weight"	"0"
+				"antialias" "1"
+				"blur"		"5"
+				"scanlines"	"2"
+				"additive"	"1"
+				"custom"	"1"
+			}
+		}
+		WeaponIconsSmallRB
+		{
+			"1"
+			{
+				"name"		"RealBeta's Weapon Icons"
 				"tall"		"32"
 				"weight"	"0"
 				"antialias" "1"
@@ -632,13 +672,12 @@ Scheme
 		{
 			"1"
 			{
-				"name"  "HalfLife2"
-				"tall"			"32"
-				"tall_hidef"	"46"
+				"name"  "Trebuchet MS"
+				"tall"			"51"
 				"weight" "0"
 				"additive" "0"
 				"antialias" "1"
-				"custom"	"1" [$OSX]
+				"blur" "2"
 			}
 		}
 		CreditsLogo
@@ -794,6 +833,7 @@ Scheme
 	{
 		"1"		"resource/HALFLIFE2.ttf"
 		"2"		"resource/HL2crosshairs.ttf"
+		"3"		"resource/RealBeta's Weapon Icons.ttf"
 	}
 
 }
