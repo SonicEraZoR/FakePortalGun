@@ -1,6 +1,6 @@
 "Resource/HudLayout.res"
 {
-	HudHealth [$WIN32]
+	HudHealth [!$DECK]
 	{
 		"fieldName"		"HudHealth"
 		"xpos"	"16"
@@ -17,25 +17,25 @@
 		"digit_xpos" "50"
 		"digit_ypos" "2"
 	}
-	HudHealth [$X360]
+	HudHealth [$DECK]
 	{
 		"fieldName"		"HudHealth"
-		"xpos"	"48"
-		"ypos"	"416"
-		"wide"	"115"
-		"tall"  "36"
+		"xpos"	"16"
+		"ypos"	"426"
+		"wide"	"130"
+		"tall"  "42"
 		"visible" "1"
 		"enabled" "1"
 
 		"PaintBackgroundType"	"2"
 		
 		"text_xpos" "8"
-		"text_ypos" "18"
-		"digit_xpos" "60"
-		"digit_ypos" "-1"
+		"text_ypos" "23"
+		"digit_xpos" "66"
+		"digit_ypos" "0"
 	}
-	
-	HudSuit [$WIN32]
+
+	HudSuit [!$DECK]
 	{
 		"fieldName"		"HudSuit"
 		"xpos"	"140"
@@ -52,25 +52,25 @@
 		"digit_xpos" "50"
 		"digit_ypos" "2"
 	}
-	HudSuit [$X360]
+	HudSuit [$DECK]
 	{
 		"fieldName"		"HudSuit"
-		"xpos"	"176"
-		"ypos"	"416"
-		"wide"	"117"
-		"tall"  "36"
+		"xpos"	"150"
+		"ypos"	"426"
+		"wide"	"120"
+		"tall"  "42"
 		"visible" "1"
 		"enabled" "1"
 
 		"PaintBackgroundType"	"2"
-
+		
 		"text_xpos" "8"
-		"text_ypos" "18"
-		"digit_xpos" "50"
-		"digit_ypos" "-1"
+		"text_ypos" "23"
+		"digit_xpos" "56"
+		"digit_ypos" "0"
 	}
 
-	HudAmmo	[$WIN32]
+	HudAmmo	[!$DECK]
 	{
 		"fieldName" "HudAmmo"
 		"xpos"	"r150"
@@ -89,27 +89,27 @@
 		"digit2_xpos" "98"
 		"digit2_ypos" "16"
 	}
-	HudAmmo	[$X360]
+	HudAmmo	[$DECK]
 	{
 		"fieldName" "HudAmmo"
-		"xpos"	"r208"
-		"ypos"	"416"
-		"wide"	"160"
-		"tall"  "36"
+		"xpos"	"r150"
+		"ypos"	"426"
+		"wide"	"152"
+		"tall"  "42"
 		"visible" "1"
 		"enabled" "1"
 
 		"PaintBackgroundType"	"2"
 
 		"text_xpos" "8"
-		"text_ypos" "18"
-		"digit_xpos" "60"
-		"digit_ypos" "-1"
-		"digit2_xpos" "120"
-		"digit2_ypos" "14"
+		"text_ypos" "24"
+		"digit_xpos" "55"
+		"digit_ypos" "0"
+		"digit2_xpos" "100"
+		"digit2_ypos" "12"
 	}
 
-	HudAmmoSecondary	[$WIN32]
+	HudAmmoSecondary [!$DECK]
 	{
 		"fieldName" "HudAmmoSecondary"
 		"xpos"	"r76"
@@ -126,33 +126,33 @@
 		"digit_xpos" "36"
 		"digit_ypos" "2"
 	}
-	HudAmmoSecondary	[$X360]
+	HudAmmoSecondary [$DECK]
 	{
 		"fieldName" "HudAmmoSecondary"
-		"xpos"	"r113"
-		"ypos"	"416"
-		"wide"	"65"
-		"tall"  "36"
+		"xpos"	"r82"
+		"ypos"	"426"
+		"wide"	"70"
+		"tall"  "42"
 		"visible" "1"
 		"enabled" "1"
 
 		"PaintBackgroundType"	"2"
 
 		"text_xpos" "8"
-		"text_ypos" "22"
-		"digit_xpos" "36"
-		"digit_ypos" "-1"
+		"text_ypos" "24"
+		"digit_xpos" "42"
+		"digit_ypos" "0"
 	}
 	
-	HudSuitPower	[$WIN32]
+	HudSuitPower	[!$DECK]
 	{
 		"fieldName" "HudSuitPower"
 		"visible" "1"
 		"enabled" "1"
 		"xpos"	"16"
-		"ypos"	"396"
+		"ypos"	"420"
 		"wide"	"102"
-		"tall"	"26"
+		"tall"	"48"
 		
 		"AuxPowerLowColor" "255 0 0 220"
 		"AuxPowerHighColor" "255 220 0 220"
@@ -162,7 +162,8 @@
 		"BarInsetY" "15"
 		"BarWidth" "92"
 		"BarHeight" "4"
-		"BarChunkWidth" "6"
+		"BarChunkWidth" "6" [!$DECK]
+		"BarChunkWidth" "7" [$DECK]
 		"BarChunkGap" "3"
 
 		"text_xpos" "8"
@@ -173,23 +174,23 @@
 
 		"PaintBackgroundType"	"2"
 	}
-	HudSuitPower	[$X360]
+	HudSuitPower	[$DECK]
 	{
 		"fieldName" "HudSuitPower"
 		"visible" "1"
 		"enabled" "1"
-		"xpos"	"48"
-		"ypos"	"370"
-		"wide"	"102"
-		"tall"	"26"
+		"xpos"	"16"
+		"ypos"	"386"
+		"wide"	"112"
+		"tall"	"54"
 		
-		"AuxPowerLowColor" "255 100 0 220"
+		"AuxPowerLowColor" "255 0 0 220"
 		"AuxPowerHighColor" "255 220 0 220"
 		"AuxPowerDisabledAlpha" "70"
 
 		"BarInsetX" "8"
-		"BarInsetY" "19"
-		"BarWidth" "92"
+		"BarInsetY" "18"
+		"BarWidth" "102"
 		"BarHeight" "5"
 		"BarChunkWidth" "6"
 		"BarChunkGap" "3"
@@ -197,8 +198,8 @@
 		"text_xpos" "8"
 		"text_ypos" "4"
 		"text2_xpos" "8"
-		"text2_ypos" "25"
-		"text2_gap" "12"
+		"text2_ypos" "26"
+		"text2_gap" "14"
 
 		"PaintBackgroundType"	"2"
 	}
@@ -210,11 +211,11 @@
 		"PaintBackgroundType"	"2"
 		"xpos"	"16"
 		"ypos"	"316"
-		"tall"  "36"
+		"tall"  "35"
 		"wide"	"36"
 		"font"	"WeaponIconsSmall"
-		"icon_xpos"	"10"
-		"icon_ypos" 	"0"
+		"icon_xpos"	"8"
+		"icon_ypos" 	"-2"
 	}
 	HudPosture	[$X360]
 	{
@@ -236,22 +237,31 @@
 		"visible" "1"
 		"PaintBackgroundType"	"2"
 		"xpos"	"270"		[$WIN32]
-		"ypos"	"444"		[$WIN32]
-		"xpos_hidef"	"293"		[$X360]		// aligned to left
+		"ypos"	"444"		[!$DECK]
+		"ypos"	"436"		[$DECK]
+		"xpos_hidef"	"306"		[$X360]		// aligned to left
 		"xpos_lodef"	"c-18"		[$X360]		// centered in screen
 		"ypos"	"428"		[$X360]				
-		"tall"  "24"
-		"wide"	"36"
-		"font"	"WeaponIconsSmall"
+		"tall"  "24" [!$DECK]
+		"tall"  "30" [$DECK]
+		"wide"	"36" [!$DECK]
+		"wide"	"46" [$DECK]
+		"font"	"WeaponIconsSmall" [!$DECK]
+		"font"	"FlashlightDeck" [$DECK]
 		
 		"icon_xpos"	"4"
-		"icon_ypos" "-8"
+		"icon_ypos" "-8" [!$DECK]
+		"icon_ypos" "-12"  [$DECK]
 		
 		"BarInsetX" "4"
-		"BarInsetY" "18"
-		"BarWidth" "28"
-		"BarHeight" "2"
-		"BarChunkWidth" "2"
+		"BarInsetY" "18" [!$DECK]
+		"BarInsetY" "22" [$DECK]
+		"BarWidth" "28" [!$DECK]
+		"BarWidth" "36" [$DECK]
+		"BarHeight" "2" [!$DECK]
+		"BarChunkWidth" "2" [!$DECK]
+		"BarHeight" "3" [$DECK]
+		"BarChunkWidth" "3" [$DECK]
 		"BarChunkGap" "1"
 	}
 	HudDamageIndicator
@@ -409,36 +419,22 @@
 		"tall"	 "4"
 	}
 
-	HudHistoryResource	[$WIN32]
+	HudHistoryResource
 	{
 		"fieldName" "HudHistoryResource"
 		"visible" "1"
 		"enabled" "1"
-		"xpos"	"r252"
+		"xpos"	"r272" [$DECK]
+		"xpos"	"r252" [!$DECK]
 		"ypos"	"40"
 		"wide"	 "248"
 		"tall"	 "320"
 
-		"history_gap"	"56" [!$OSX]
-		"history_gap"	"64" [$OSX]
+		"history_gap"	"64" [$DECK]
+		"history_gap"	"56" [!$DECK]
 		"icon_inset"	"38"
 		"text_inset"	"36"
 		"text_inset"	"26"
-		"NumberFont"	"HudNumbersSmall"
-	}
-	HudHistoryResource	[$X360]
-	{
-		"fieldName" "HudHistoryResource"
-		"visible" "1"
-		"enabled" "1"
-		"xpos"	"r300"
-		"ypos"	"40" 
-		"wide"	 "248"
-		"tall"	 "240"
-
-		"history_gap"	"50"
-		"icon_inset"	"38"
-		"text_inset"	"36"
 		"NumberFont"	"HudNumbersSmall"
 	}
 
@@ -526,7 +522,7 @@
 	}
 
 
-	HudSquadStatus	[$WIN32]
+	HudSquadStatus	[!$DECK]
 	{
 		"fieldName"	"HudSquadStatus"
 		"visible"	"1"
@@ -544,27 +540,27 @@
 
 		"PaintBackgroundType"	"2"
 	}
-	HudSquadStatus	[$X360]
+	HudSquadStatus	[$DECK]
 	{
 		"fieldName"	"HudSquadStatus"
 		"visible"	"1"
 		"enabled" "1"
-		"xpos"	"r182"
-		"ypos"	"348"
-		"wide"	"134"
-		"tall"	"62"
+		"xpos"	"r160"
+		"ypos"	"372"
+		"wide"	"144"
+		"tall"	"46"
 		"text_xpos"	"8"
-		"text_ypos"	"44"
+		"text_ypos"	"28"
 		"SquadIconColor"	"255 220 0 160"
 		"IconInsetX"	"8"
-		"IconInsetY"	"-4"
-		"IconGap"		"24"
-		"IconFont"		"SquadIcon"
+		"IconInsetY"	"-10"
+		"IconGap"		"39"
 
 		"PaintBackgroundType"	"2"
 	}
 
-	HudPoisonDamageIndicator	[$WIN32]
+
+	HudPoisonDamageIndicator	[!$DECK]
 	{
 		"fieldName"	"HudPoisonDamageIndicator"
 		"visible"	"0"
@@ -579,18 +575,18 @@
 		"TextColor"	"255 170 0 220"
 		"PaintBackgroundType"	"2"
 	}
-	HudPoisonDamageIndicator	[$X360]
+	HudPoisonDamageIndicator	[$DECK]
 	{
 		"fieldName"	"HudPoisonDamageIndicator"
 		"visible"	"0"
 		"enabled" "1"
-		"xpos"	"48"
-		"ypos"	"264"
-		"wide"	"192"
-		"tall"	"46"
+		"xpos"	"16"
+		"ypos"	"300"
+		"wide"	"190"
+		"tall"	"42"
 		"text_xpos"	"8"
-		"text_ypos"	"6"
-		"text_ygap" "16"
+		"text_ypos"	"8"
+		"text_ygap" "14"
 		"TextColor"	"255 170 0 220"
 		"PaintBackgroundType"	"2"
 	}

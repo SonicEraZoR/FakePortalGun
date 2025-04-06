@@ -35,13 +35,13 @@ WeaponData
 	{
 		"weapon"
 		{
-				"font"		"WeaponIcons"
-				"character"	"i"
+				"font"		"WeaponIconsRB"
+				"character"	"l"
 		}
 		"weapon_s"
 		{	
-				"font"		"WeaponIconsSelected"
-				"character"	"i"
+				"font"		"WeaponIconsSelectedRB"
+				"character"	"l"
 		}
 		"weapon_small"
 		{

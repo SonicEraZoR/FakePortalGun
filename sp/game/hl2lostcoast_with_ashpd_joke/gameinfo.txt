@@ -1,7 +1,7 @@
 "GameInfo"
 {
-	game 		"Half-Life 2 with ASHPD"
-	title 		"Half-Life 2 with"
+	game 		"Half-Life 2: Lost Coast with ASHPD (April Fools')"
+	title 		"Half-Life 2: Lost Coast with"
 	title2		"Aperture Science Handheld Portal Device"
 
 	type		singleplayer_only
@@ -10,7 +10,7 @@
 
 	FileSystem
 	{
-		SteamAppId				220 // This sets the app ID in Steam. This is the Source SDK Base 2013 Singleplayer
+		SteamAppId				340 // This sets the app ID in Steam. This is the Source SDK Base 2013 Singleplayer
 		
 		//
 		// The code that loads this file automatically does a few things here:
@@ -39,6 +39,7 @@
 			//
 			// Note that this folder is scanned only when the game is booted.
 			game+mod			|gameinfo_path|custom/*
+			game+mod			lostcoast/custom/*
 			game+mod			hl2/custom/*
 
 			// Now search loose files.  We'll set the directory containing the gameinfo.txt file
@@ -52,6 +53,8 @@
 			// in folders where they don't exist.  (Searching a VPK is much faster than making an operating
 			// system call.)
 			game_lv				hl2/hl2_lv.vpk
+			game+mod			lostcoast/lostcoast_sound_vo_english.vpk
+			game+mod			lostcoast/lostcoast_pak.vpk
 			game				|all_source_engine_paths|hl2/hl2_english.vpk
 			game				|all_source_engine_paths|hl2/hl2_pak.vpk
 			game				|all_source_engine_paths|hl2/hl2_textures.vpk
@@ -67,10 +70,10 @@
 
 			// Add the HL2 directory as a game search path.  This is also where where writes
 			// to the "game" path go.
-			game+game_write		hl2
+			game+game_write		lostcoast
 
 			// Where the game's binaries are
-			gamebin				hl2/bin
+			gamebin				lostcoast/bin
 
 			// Last, mount in shared HL2 loose files
 			game				|all_source_engine_paths|hl2
