@@ -367,9 +367,6 @@ void CFakePortalGunProjectile::IgniteThink( void )
 
 		if ( pPlayer )
 		{
-			color32 white = { 255,225,205,64 };
-			UTIL_ScreenFade( pPlayer, white, 0.1f, 0.0f, FFADE_IN );
-
 			pPlayer->RumbleEffect( RUMBLE_RPG_MISSILE, 0, RUMBLE_FLAG_RESTART );
 		}
 	}
