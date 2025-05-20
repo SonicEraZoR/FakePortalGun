@@ -763,7 +763,7 @@ Scheme
 			"1"
 			{
 				"name"		"HalfLife2"
-				"tall"		"34"
+				"tall"		"128"
 				"weight"	"0"
 				"antialias" "1"
 				"additive"	"1"
@@ -775,7 +775,19 @@ Scheme
 			"1"
 			{
 				"name"		"HalfLife2"
-				"tall"		"34"
+				"tall"		"32"
+				"weight"	"0"
+				"antialias" "1"
+				"additive"	"1"
+				"custom"	"1"
+			}
+		}
+		CreditsOutroValve
+		{
+			"1"
+			{
+				"name"		"HalfLife2"
+				"tall"		"48"
 				"weight"	"0"
 				"antialias" "1"
 				"additive"	"1"
@@ -807,19 +819,7 @@ Scheme
 			"1"
 			{
 				"name"		"HalfLife2"
-				"tall"		"34"
-				"weight"	"0"
-				"antialias" "1"
-				"additive"	"1"
-				"custom"	"1"
-			}
-		}
-		CreditsOutroValve
-		{
-			"1"
-			{
-				"name"		"HalfLife2"
-				"tall"		"48"
+				"tall"		"16"
 				"weight"	"0"
 				"antialias" "1"
 				"additive"	"1"
@@ -832,7 +832,7 @@ Scheme
 			{
 				"name"		"Verdana" [!$OSX]
 				"name"		"Courier Bold" [$OSX]
-				"tall"		"16"
+				"tall"		"9"
 				"weight"	"900"
 				"antialias" "1"
 			}
