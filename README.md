@@ -1,43 +1,43 @@
-               SOURCE 1 SDK LICENSE
+Fake Portal Gun Mod
+=====
 
-Source SDK Copyright(c) Valve Corp.  
+This is a mod for a "portal gun" that shoots explosive portals. Basically an RPG reskin, but shoots portals instead of rockets. It also has rocket jumping capabilities which can be tuned with some convars.
 
-THIS DOCUMENT DESCRIBES A CONTRACT BETWEEN YOU AND VALVE 
-CORPORATION ("Valve").  PLEASE READ IT BEFORE DOWNLOADING OR USING 
-THE SOURCE ENGINE SDK ("SDK"). BY DOWNLOADING AND/OR USING THE 
-SOURCE ENGINE SDK YOU ACCEPT THIS LICENSE. IF YOU DO NOT AGREE TO 
-THE TERMS OF THIS LICENSE PLEASE DON’T DOWNLOAD OR USE THE SDK.  
+## Tuning rocket jumping
 
-  You may, free of charge, download and use the SDK to develop a modified Valve game 
-running on the Source engine.  You may distribute your modified Valve game in source and 
-object code form, but only for free. Terms of use for Valve games are found in the Steam 
-Subscriber Agreement located here: http://store.steampowered.com/subscriber_agreement/ 
+Rocket jumping can be tuned with some convars:
 
-  You may copy, modify, and distribute the SDK and any modifications you make to the 
-SDK in source and object code form, but only for free.  Any distribution of this SDK must 
-include this LICENSE file and thirdpartylegalnotices.txt.  
- 
-  Any distribution of the SDK or a substantial portion of the SDK must include the above 
-copyright notice and the following: 
+* sv_rocket_jump_damage_decrease (default is "0.75") - percent by which rocket jump damage is decreased for the player, can't be "1" though since in order to apply knock back at least some damage needs to be received.
+* sv_rocket_jump_force_boost_x (default is "1") - percent by which rocket jump knock back is increased on x axis.
+* sv_rocket_jump_force_boost_y (default is "1") - percent by which rocket jump knock back is increased on y axis.
+* sv_rocket_jump_force_boost_z (default is "250") - percent by which rocket jump knock back is increased on z axis.
 
-    DISCLAIMER OF WARRANTIES.  THE SOURCE SDK AND ANY 
-    OTHER MATERIAL DOWNLOADED BY LICENSEE IS PROVIDED 
-    "AS IS".  VALVE AND ITS SUPPLIERS DISCLAIM ALL 
-    WARRANTIES WITH RESPECT TO THE SDK, EITHER EXPRESS 
-    OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, IMPLIED 
-    WARRANTIES OF MERCHANTABILITY, NON-INFRINGEMENT, 
-    TITLE AND FITNESS FOR A PARTICULAR PURPOSE.  
+## Additional convars
 
-    LIMITATION OF LIABILITY.  IN NO EVENT SHALL VALVE OR 
-    ITS SUPPLIERS BE LIABLE FOR ANY SPECIAL, INCIDENTAL, 
-    INDIRECT, OR CONSEQUENTIAL DAMAGES WHATSOEVER 
-    (INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF 
-    BUSINESS PROFITS, BUSINESS INTERRUPTION, LOSS OF 
-    BUSINESS INFORMATION, OR ANY OTHER PECUNIARY LOSS) 
-    ARISING OUT OF THE USE OF OR INABILITY TO USE THE 
-    ENGINE AND/OR THE SDK, EVEN IF VALVE HAS BEEN 
-    ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.  
- 
-       
-If you would like to use the SDK for a commercial purpose, please contact Valve at 
-sourceengine@valvesoftware.com.
+This mod also implements these convars, which mimic Portal, should be self-explanatory
+
+* sv_regeneration_wait_time (default 1)
+* sv_regeneration_enable (default 0)
+* sv_receive_fall_damage (default 1)
+
+## Dependencies
+
+### Windows
+* [Visual Studio 2013 with Update 5](https://visualstudio.microsoft.com/vs/older-downloads/)
+
+### macOS
+* [Xcode 5.0.2](https://developer.apple.com/downloads/more)
+
+### Linux
+* GCC 4.8
+* [Steam Client Runtime](http://media.steampowered.com/client/runtime/steam-runtime-sdk_latest.tar.xz)
+
+## Building
+
+Compiling process is the same as for Source SDK 2013. Instructions for building Source SDK 2013 can be found here: https://developer.valvesoftware.com/wiki/Source_SDK_2013
+
+You will need Portal installed though
+
+## Installing:
+
+Same as Source SDK 2013 mod: https://developer.valvesoftware.com/wiki/Setup_mod_on_steam
