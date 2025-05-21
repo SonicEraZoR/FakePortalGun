@@ -249,6 +249,8 @@ $Project "Server (LostCoast)"
 			$File	"hl2\weapon_smg1.cpp"
 			$File	"hl2\weapon_stunstick.cpp"
 			$File	"hl2\weapon_stunstick.h"
+			$File	"hl2\weapon_fakeportalgun.cpp"
+			$File	"hl2\weapon_fakeportalgun.h"
 			$File	"episodic\weapon_oldmanharpoon.cpp"
 
 			$Folder	"Unused"
