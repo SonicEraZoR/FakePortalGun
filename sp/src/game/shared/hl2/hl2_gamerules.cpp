@@ -67,7 +67,7 @@ IMPLEMENT_NETWORKCLASS_ALIASED( HalfLife2Proxy, DT_HalfLife2Proxy )
 		SendPropDataTable( "hl2_gamerules_data", 0, &REFERENCE_SEND_TABLE( DT_HL2GameRules ), SendProxy_HL2GameRules )
 	END_SEND_TABLE()
 
-	ConVar sv_receive_fall_damage("sv_receive_fall_damage", "0", FCVAR_GAMEDLL);
+	ConVar sv_receive_fall_damage("sv_receive_fall_damage", "1", FCVAR_GAMEDLL);
 #endif
 
 ConVar  physcannon_mega_enabled( "physcannon_mega_enabled", "0", FCVAR_CHEAT | FCVAR_REPLICATED );
