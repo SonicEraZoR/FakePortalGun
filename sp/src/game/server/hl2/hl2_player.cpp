@@ -112,7 +112,7 @@ ConVar autoaim_unlock_target( "autoaim_unlock_target", "0.8666" );
 ConVar sv_stickysprint("sv_stickysprint", "0", FCVAR_ARCHIVE | FCVAR_ARCHIVE_XBOX);
 
 ConVar sv_regeneration_wait_time("sv_regeneration_wait_time", "1.0", FCVAR_REPLICATED);
-ConVar sv_regeneration_enable("sv_regeneration_enable", "1", FCVAR_REPLICATED | FCVAR_ARCHIVE);
+ConVar sv_regeneration_enable("sv_regeneration_enable", "0", FCVAR_REPLICATED | FCVAR_ARCHIVE);
 
 #define	FLASH_DRAIN_TIME	 1.1111	// 100 units / 90 secs
 #define	FLASH_CHARGE_TIME	 50.0f	// 100 units / 2 secs
