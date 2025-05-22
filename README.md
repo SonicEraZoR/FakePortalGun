@@ -40,4 +40,4 @@ You will need Portal installed though
 
 ## Installing:
 
-Same as Source SDK 2013 mod: https://developer.valvesoftware.com/wiki/Setup_mod_on_steam
+Same as Source SDK 2013 mod: https://developer.valvesoftware.com/wiki/Setup_mod_on_Steam
